@@ -3,20 +3,48 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Helo Vue</title>
+	
+
+	<title>Robby Sanjaya Muhammad \ IT Ninja</title>
+	<link href='http://jankerzone.com/favicon.ico' rel='icon' type='image/x-icon'/>
+
 	<link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
 	<script src="node_modules/vue/dist/vue.min.js"></script>
 
 </head>
 <body>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Robby <br/>Sanjaya<br/>Muhammad
+      </h1>
+      <h2 class="subtitle">
+        [Web Developer, UI Designer, IT Ninja]
+      </h2>
+    </div>
+  </div>
+</section>
+<div class="column is-12">
 	<div id="myapp" class="container">
-	<tabs>
-		<tab-item name="satu" :selected="true">Si Tampan</tab-item>
-		<tab-item name="dua">Si Imut</tab-item>
-		<tab-item name="tiga">Si Lemesh</tab-item>
-	</tabs>
+		<tabs>
+			<tab-item name="satu" :selected="true">
+				<div class="container">
+					<div class="column is-9">
+						<p>Hello world, saya Muhammad Robby Sanjaya, Web Programmer dari Jogja dan kini sedang menetap di Jakarta.</p>
+						<p>Sangat menyukai aktifitas luar-ruangan seperti mendaki gunung, bersepeda, freediving, serta piknik ke pantai-pantai seru.</p>
+						<p>Setelah 4 tahun bersolo karir sebagai freelancer, sekarang saya dipercaya bergabung menjadi tim IT support dan full-stack developer tepatnya di Kementerian Perencanaan Pembangunan Nasional (PPN)/ BAPPENAS. </p>
+						<p>Saya menghabiskan 5-8 jam setiap harinya menggunakan internet. Selain itu saya juga suka membaca (dan sayangnya sedikit menulis), menikmati segelas teh hangat dan berinteraksi dengan siapa saja. :)</p>
+						<p>Link media sosial:<br/>Pinterest/ Twitter / Instagram</p>
+					</div>
+					<div class="column is-4"></div>
+				</div>
+			</tab-item>
+			<tab-item name="dua">Si Imut</tab-item>
+			<tab-item name="tiga">Si Lemesh</tab-item>
+		</tabs>
+	</div>
 </div>
-
 <script>
 // Vue.config.devtools = true;
 	
@@ -71,6 +99,7 @@
 	var app = new Vue({
 		el:'#myapp',
 	})
+
 </script>
 </body>
 </html>
