@@ -1,27 +1,14 @@
 {
-  "name": "jankerzone-2",
-  "version": "2.0.1",
-  "description": "Adalah halaman portofolio terbaru dari Muhammad Robby Sanjaya dengan teknologi VueJS",
-  "main": "index.js",
-  "dependencies": {
-    "bulma": "^0.6.1",
-    "sweetalert": "^2.0.8",
-    "vue": "^2.5.7"
-  },
-  "devDependencies": {},
+  "name": "jankerzone.v.2",
+  "version": "1.0.0",
+  "description": "Portfolio with microblogging",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "node -e \"console.log('no tests')\""
   },
-  "keywords": [
-    "jankerzone",
-    "MRS",
-    "vueJS",
-    "vue",
-    "programming",
-    "portfolio",
-    "portofolio"
-  ],
-  "author": "MRS",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "repository": "https://github.com/jankerzone/jankerzone.v.2.git",
+  "type": "commonjs"
 }

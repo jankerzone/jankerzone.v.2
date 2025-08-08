@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microblog</title>
+</head>
+<body>
+  <h1>Microblog</h1>
+  <form id="postForm">
+    <input type="text" id="postText" placeholder="Write something">
+    <button type="submit">Post</button>
+  </form>
+  <ul id="posts"></ul>
+  <script>
+    async function loadPosts() {
+      const res = await fetch('/api/posts');
+      const posts = await res.json();
+      const list = document.getElementById('posts');
+      list.innerHTML = '';
+      posts.slice().reverse().forEach(p => {
+        const li = document.createElement('li');
+        li.textContent = p.text;
+        list.appendChild(li);
+      });
+    }
+    document.getElementById('postForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = document.getElementById('postText').value;
+      if (!text) return;
+      await fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+      document.getElementById('postText').value = '';
+      loadPosts();
+    });
+    loadPosts();
+  </script>
+</body>
+</html>
