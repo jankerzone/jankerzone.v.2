@@ -2,14 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jankerzone v2</title>
+  <style>
+    :root {
+      --bg: #f8f8f8;
+      --text: #1a1a1a;
+      --accent: #0066ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+    nav {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin: 0;
+    }
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      width: 100%;
+      max-width: 900px;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+    }
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Portfolio</h1>
-  <ul>
-    <li>Project A</li>
-    <li>Project B</li>
-  </ul>
-  <a href="/blog.html">Microblog</a>
+  <nav>
+    <a href="/blog.html">microblog</a>
+  </nav>
+  <h1>Jankerzone v2</h1>
+  <section class="projects">
+    <div class="card">
+      <h2>Project A</h2>
+      <p>Coming soon.</p>
+    </div>
+    <div class="card">
+      <h2>Project B</h2>
+      <p>Coming soon.</p>
+    </div>
+  </section>
 </body>
 </html>
