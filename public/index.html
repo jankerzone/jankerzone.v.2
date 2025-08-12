@@ -30,15 +30,25 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
-    nav {
+    header {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
       padding: 1.5rem 2rem;
     }
-    nav a {
+    header a {
       color: var(--accent);
       text-decoration: none;
       font-weight: 600;
+      margin-left: 1.5rem;
+    }
+    header nav {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.125rem;
     }
     .hero {
       text-align: center;
@@ -51,35 +61,83 @@
     }
     .hero p {
       font-size: clamp(1rem, 1.5vw, 1.25rem);
-      color: var(--text);
       opacity: .7;
     }
-    .projects {
+    .portfolio {
       max-width: 1100px;
       margin: 0 auto 6rem;
+      padding: 0 2rem;
+    }
+    .portfolio-grid {
       display: grid;
       gap: 2rem;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      padding: 0 2rem;
     }
-    .card {
+    .portfolio-item {
       background: var(--card);
       border: 1px solid rgba(0,0,0,.05);
       border-radius: 16px;
-      padding: 2rem;
+      overflow: hidden;
       transition: transform .2s ease, box-shadow .2s ease;
     }
-    .card:hover {
+    .portfolio-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 30px rgba(0,0,0,.08);
     }
-    .card h2 {
-      font-size: 1.25rem;
-      margin-bottom: .5rem;
+    .portfolio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
     }
-    .card p {
-      font-size: .95rem;
-      opacity: .8;
+    .portfolio-item h3 {
+      font-size: 1.1rem;
+      padding: 1rem;
+    }
+    .case-study {
+      max-width: 1100px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .case-study img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+    .about {
+      max-width: 700px;
+      margin: 0 auto 6rem;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .contact {
+      max-width: 700px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+    }
+    .contact form {
+      display: grid;
+      gap: 1rem;
+    }
+    .contact input,
+    .contact textarea {
+      padding: .75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,.1);
+      background: var(--card);
+      color: var(--text);
+    }
+    .contact button {
+      padding: .75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
     }
     footer {
       text-align: center;
@@ -90,24 +148,60 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="/blog.html">Microblog</a>
-  </nav>
+  <header>
+    <div class="logo">Jankerzone</div>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#case-study">Case Study</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="/blog.html">Microblog</a>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <h1>Jankerzone</h1>
-    <p>Developer playground & micro‑experiments</p>
+  <section id="hero" class="hero">
+    <h1>Developer Playground</h1>
+    <p>Exploring ideas and building minimal tools.</p>
   </section>
 
-  <section class="projects">
-    <div class="card">
-      <h2>Project A</h2>
-      <p>Coming soon.</p>
+  <section id="portfolio" class="portfolio">
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300" alt="Project placeholder">
+        <h3>Project One</h3>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300" alt="Project placeholder">
+        <h3>Project Two</h3>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x300" alt="Project placeholder">
+        <h3>Project Three</h3>
+      </div>
     </div>
-    <div class="card">
-      <h2>Project B</h2>
-      <p>Coming soon.</p>
+  </section>
+
+  <section id="case-study" class="case-study">
+    <img src="https://via.placeholder.com/600x400" alt="Case study image">
+    <div>
+      <h2>Case Study Title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
     </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor eget erat fermentum consectetur. Integer vel sem id tortor varius lobortis at ac metus.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="4" placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
 
   <footer>© 2025 Jankerzone</footer>
