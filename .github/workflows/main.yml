@@ -1,12 +1,26 @@
-name: Example
-uses: lowlighter/metrics@latest
-with:
-  template: repository
-  filename: metrics.repository.svg
-  token: ${{ secrets.METRIC_TOKEN }}
-  user: lowlighter
-  repo: metrics
-  plugin_lines: yes
-  plugin_followup: yes
-  plugin_projects: yes
-  plugin_projects_repositories: lowlighter/metrics/projects/1
+name: GitHub Metrics
+
+on:
+  schedule: # Update otomatis tiap 24 jam
+    - cron: "0 0 * * *"
+  workflow_dispatch: # Bisa dijalankan manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate metrics
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jankerzone
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Jakarta
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+          plugin_contributors: yes
+          plugin_contributors_contributions: 10
+          plugin_contributors_sections: categories, commits
