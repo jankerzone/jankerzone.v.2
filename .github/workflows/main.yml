@@ -3,7 +3,7 @@ uses: lowlighter/metrics@latest
 with:
   template: repository
   filename: metrics.repository.svg
-  token: ${{ secrets.METRICS_TOKEN_WITH_SCOPES }}
+  token: ${{ secrets.METRIC_TOKEN }}
   user: lowlighter
   repo: metrics
   plugin_lines: yes
